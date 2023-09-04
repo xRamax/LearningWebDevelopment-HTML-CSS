@@ -1,0 +1,71 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    background-color: black;
+    color: white;
+    width: 100%;
+}
+
+nav .mobile{
+    display: none
+}
+
+nav .logo {
+    min-width: 250px;
+}
+
+
+nav a {
+    color: white;
+    text-decoration: none;
+    display: block;             /* Las etiquetas <a> son inline por lo cual buscamos que se distribuyan en bloques */
+    padding: 20px 25px;
+}
+
+nav a:hover {
+    color: black;
+    background-color: #00c3ff;
+}
+
+nav .desktop{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    pad: 0 20px;
+}
+
+nav .desktop .primary,
+nav .desktop .secondary,
+nav .desktop .dropdown {
+    display: flex;
+}
+
+nav .desktop .dropdown {
+    display: none;
+}
+
+
+@media screen and (max-width: 894px) {
+
+    nav .logo {
+        min-width: 100px;
+    }
+
+    nav .desktop .secondary {
+        display: none;
+    }
+
+    nav .desktop .dropdown {
+        display: block;
+    }
+
+    nav .dropdown.submenu {
+        position: absolute;
+        display: none;
+    }
+}
+
