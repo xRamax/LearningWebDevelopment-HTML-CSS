@@ -5,18 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu Responsive</title>
     <link rel="stylesheet" href="styles.css" type="text/css">
-</head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" /></head>
 <body>
     <header>
         <nav>
             <div class="mobile">
                 <div class="header">
                     <div class="logo"> Logo </div>
-                    <div class="more">
-                        <button> More </button>
+                    <div class="menu">
+                        <button id="btnMenu">
+                            <span class="material-symbols-outlined">Menu</span>
+                        </button>
                     </div>
                 </div>
-                <div class="links">
+                <div id="links" class="links">
                     <a href="#"> Services </a>
                     <a href="#"> About </a>
                     <a href="#"> Contact </a>
@@ -39,7 +41,7 @@
                     <a href="#">Login</a>
                 </div>
                 <div class="dropdown">
-                    <a href="#">More</a>
+                    <a href="#">Menu</a>
                     <div class="submenu">
                       <a href="#">Sign up</a>
                       <a href="#">Login</a>
@@ -48,5 +50,14 @@
             </div>
         </nav>
     </header>
+
+    <script>
+        const btnMenu = document.querySelector("#btnMenu");
+        const links = document.querySelector("#links");
+
+        btnMenu.addEventListener("click", (e) => {
+            links.classList.toggle("collapsed");
+        });
+    </script>
 </body>
 </html>

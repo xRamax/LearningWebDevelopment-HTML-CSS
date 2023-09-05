@@ -11,8 +11,31 @@ nav{
 }
 
 nav .mobile{
-    display: none
+    display: none;
 }
+
+nav .mobile .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+
+}
+
+
+nav .mobile .header .menu button{
+    border: none;
+    background-color: black;
+    padding: 15px;
+    cursor: pointer;
+    color: white;
+    
+}
+
+.collapsed {
+    display: none;
+}
+
 
 nav .logo {
     min-width: 250px;
@@ -49,7 +72,7 @@ nav .desktop .dropdown {
 }
 
 
-@media screen and (max-width: 894px) {
+@media screen and (max-width: 894px) {          /* Diseño responsive para "tablet" */
 
     nav .logo {
         min-width: 100px;
@@ -63,9 +86,34 @@ nav .desktop .dropdown {
         display: block;
     }
 
-    nav .dropdown.submenu {
+    nav .dropdown .submenu {
+        background-color: black;
         position: absolute;
         display: none;
+        width: 200px;
+        right: 0;                /* Definimos que el div no tenga margen derecho respecto a la pantalla ya que el diseño responsive no permitía visualizar de manera correcta los 200px de anchura*/
+
+    }
+
+    nav .dropdown:hover .submenu{
+        display: block;
     }
 }
+
+
+@media screen and (max-width: 500px){           /* Diseño responsive para "mobile" */
+    
+    nav .desktop {
+        display: none;
+
+    }
+
+    nav .mobile {
+        display: block;
+    }
+
+
+}
+    
+
 
